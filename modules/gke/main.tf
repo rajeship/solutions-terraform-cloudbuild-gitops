@@ -38,7 +38,7 @@ module "gke" {
       image_type         = "COS"
       auto_repair        = true
       auto_upgrade       = true
-      service_account    = "iac-admin@fsi-retailbanking-dev.iam.gserviceaccount.com"
+      service_account    = "gke-service-account@fsi-retailbanking-dev.iam.gserviceaccount.com"
       preemptible        = false
       initial_node_count = 80
     },
