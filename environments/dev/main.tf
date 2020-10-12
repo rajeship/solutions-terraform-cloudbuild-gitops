@@ -39,9 +39,17 @@ module "firewall" {
   subnet  = "${module.vpc.subnet}"
 }
 
-module "gke" {
+/* module "gke" {
   source  = "../../modules/gke"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
   env     = "${local.env}"
+} */
+
+module "cluster-1-nodepool-1" {
+  source                      = "../modules/gke-nodepool"
+  project_id                  = "${var.project}"
+  cluster_name                = "cluster-1"
+  location                    = "europe-west1-b"
+  name                        = "nodepool-1"
 }
