@@ -47,7 +47,7 @@ module "firewall" {
 } */
 
 module "cluster-1-nodepool-1" {
-  source                      = "../modules/gke-nodepool"
+  source                      = "../../modules/gke-nodepool"
   project_id                  = "${var.project}"
   cluster_name                = "cluster-1"
   location                    = "europe-west1-b"
