@@ -46,6 +46,29 @@ module "firewall" {
   env     = "${local.env}"
 } */
 
+module "cluster-1" {
+  source = "../../modules/gke-cluster"
+  project_id                = "${var.project}"
+  name                      = "cluster-1"
+  location                  = "europe-west1-b"
+  network                   = var.network_self_link
+  subnetwork                = var.subnet_self_link
+  secondary_range_pods      = "pods"
+  secondary_range_services  = "services"
+  default_max_pods_per_node = 32
+  master_authorized_ranges = {
+    internal-vms = "10.0.0.0/8"
+  }
+  private_cluster_config = {
+    enable_private_nodes    = true
+    enable_private_endpoint = true
+    master_ipv4_cidr_block  = "192.168.0.0/28"
+  }
+  labels = {
+    environment = "${local.env}"
+  }
+}
+
 module "cluster-1-nodepool-1" {
   source                      = "../../modules/gke-nodepool"
   project_id                  = "${var.project}"
