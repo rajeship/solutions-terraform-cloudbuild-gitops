@@ -31,6 +31,7 @@ module "firewall" {
   source  = "../../modules/firewall"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
+  network = "${local.env}"
 }
 
 module "http_server" {
