@@ -50,7 +50,7 @@ module "cluster-1" {
   source = "../../modules/gke-cluster"
   project_id                = "${var.project}"
   name                      = "cluster-1"
-  location                  = "us-west1-b"
+  location                  = "us-west1-a"
   network                   = var.network_self_link
   subnetwork                = var.subnet_self_link
   secondary_range_pods      = "pods"
@@ -73,6 +73,6 @@ module "cluster-1-nodepool-1" {
   source                      = "../../modules/gke-nodepool"
   project_id                  = "${var.project}"
   cluster_name                = "cluster-1"
-  location                    = "us-west1-b"
+  location                    = "us-west1-a"
   name                        = "nodepool-1"
 }
