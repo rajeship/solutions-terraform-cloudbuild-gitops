@@ -39,14 +39,14 @@ module "firewall" {
   subnet  = "${module.vpc.subnet}"
 }
 
-module "gke" {
+/*module "gke" {
   source  = "../../modules/gke"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
   env     = "${local.env}"
 } 
 
-/* module "cluster-1" {
+ module "cluster-1" {
   source = "../../modules/gke-cluster"
   project_id                = "${var.project}"
   name                      = "cluster-1"

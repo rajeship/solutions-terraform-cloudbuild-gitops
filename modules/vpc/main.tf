@@ -29,6 +29,15 @@ module "vpc" {
   ]
 
   secondary_ranges = {
-    "${var.env}-subnet-01" = []
+    "${var.env}-subnet-01" = [
+      {
+        range_name    = "ip-range-pods"
+        ip_cidr_range = "192.168.0.0/18"
+      },
+      {
+        range_name    = "ip-range-services"
+        ip_cidr_range = "192.168.64.0/18"
+      },
+    ]
   }
 }

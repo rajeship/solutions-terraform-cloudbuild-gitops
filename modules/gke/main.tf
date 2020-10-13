@@ -17,11 +17,11 @@ module "gke" {
   project_id                 = "${var.project}"
   name                       = "gke-test-1"
   region                     = "us-west1"
-  zones                      = ["us-west1-a", "us-west1-b", "us-west1-c"]
+  zones                      = ["us-west1-a"]
   network                    = "dev"
   subnetwork                 = "dev-subnet-01"
-  ip_range_pods              = "us-west1-01-gke-01-pods"
-  ip_range_services          = "us-west1-01-gke-01-services"
+  ip_range_pods              = "ip-range-pods"
+  ip_range_services          = "ip-range-services"
   http_load_balancing        = false
   horizontal_pod_autoscaling = true
   network_policy             = true
