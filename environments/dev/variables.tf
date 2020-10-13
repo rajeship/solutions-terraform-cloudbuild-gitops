@@ -14,3 +14,5 @@
 
 
 variable "project" {}
+variable "network_self_link" {}
+variable "subnet_self_link" {}

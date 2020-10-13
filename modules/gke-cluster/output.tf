@@ -20,21 +20,22 @@ output "cluster" {
   value       = google_container_cluster.cluster
 }
 
-output "endpoint" {
-  description = "Cluster endpoint."
-  value       = google_container_cluster.cluster.endpoint
-}
-
 output "location" {
   description = "Cluster location."
   value       = google_container_cluster.cluster.location
+}
+
+/*
+output "endpoint" {
+  description = "Cluster endpoint."
+  value       = google_container_cluster.cluster.endpoint
 }
 
 output "master_version" {
   description = "Master version."
   value       = google_container_cluster.cluster.master_version
 }
-
+*/
 output "name" {
   description = "Cluster name."
   value       = google_container_cluster.cluster.name
