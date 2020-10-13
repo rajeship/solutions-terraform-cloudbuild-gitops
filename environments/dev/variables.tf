@@ -16,9 +16,9 @@
 variable "project" {}
 variable "network_self_link" {
     description = "The self_link of the network to NAT."
-    default     = "default"
+    default     = "dev"
 }
 variable "subnet_self_link" {
     description = "The self_link of the network to NAT."
-    default     = "default"
+    default     = "dev-subnet-01"
 }
