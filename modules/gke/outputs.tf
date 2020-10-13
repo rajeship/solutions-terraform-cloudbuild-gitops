@@ -17,6 +17,6 @@ output "name" {
   value = "${module.gke.name}"
 }
 
-output "network" {
+/*output "network" {
   value = "${module.gke.network}"
-}
+} */
