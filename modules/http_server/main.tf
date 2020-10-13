@@ -14,7 +14,7 @@
 
 
 locals {
-  network = "${element(split("-", var.subnet), 0)}"
+  network = "${var.network}"
 }
 
 resource "google_compute_instance" "http_server" {
