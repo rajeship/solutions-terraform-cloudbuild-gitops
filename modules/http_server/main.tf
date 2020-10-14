@@ -13,7 +13,7 @@
 # limitations under the License.
 
 locals {
-  subnet = "${element(module.vpc.subnets_names, 0)}"
+  subnet = "${element(var.subnet, 0)}"
 } 
 
 resource "google_compute_instance" "http_server" {
