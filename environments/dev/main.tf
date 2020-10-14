@@ -30,14 +30,14 @@ module "vpc" {
 module "firewall" {
   source  = "../../modules/firewall"
   project = "${var.project}"
-  network = "${local.env}"
+  network = "${module.vpc.network}"
 }
 
 module "http_server" {
   source  = "../../modules/http_server"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
-  network = "${local.env}"
+  network = "${module.vpc.network}"
 }
 
 /*module "gke" {
