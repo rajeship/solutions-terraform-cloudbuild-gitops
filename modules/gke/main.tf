@@ -18,8 +18,8 @@ module "gke" {
   name                       = "gke-test-1"
   region                     = "us-west1"
   zones                      = ["us-west1-a"]
-  network                    = "dev"
-  subnetwork                 = "dev-subnet-01"
+  network                    = "${var.network}"
+  subnetwork                 = "${var.subnet}"
   ip_range_pods              = "ip-range-pods"
   ip_range_services          = "ip-range-services"
   http_load_balancing        = false

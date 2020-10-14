@@ -18,7 +18,7 @@ locals {
 }
 
 provider "google" {
-  project = "${var.project}"
+  project = var.project
 }
 
 module "vpc" {
@@ -40,14 +40,14 @@ module "http_server" {
   network = "${module.vpc.network}"
 }
 
-/*module "gke" {
+module "gke" {
   source  = "../../modules/gke"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
-  env     = "${local.env}"
+  network = "${module.vpc.network}"
 } 
 
- module "cluster-1" {
+ /*module "cluster-1" {
   source = "../../modules/gke-cluster"
   project_id                = "${var.project}"
   name                      = "cluster-1"
