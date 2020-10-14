@@ -12,7 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-local subnet = "${element(module.vpc.subnets_names, 0)}"
+locals {
+  subnet = "${element(module.vpc.subnets_names, 0)}"
+} 
 
 resource "google_compute_instance" "http_server" {
   project      = "${var.project}"
