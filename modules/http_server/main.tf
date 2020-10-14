@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+local subnet = "${element(module.vpc.subnets_names, 0)}"
 
 resource "google_compute_instance" "http_server" {
   project      = "${var.project}"
@@ -28,7 +29,7 @@ resource "google_compute_instance" "http_server" {
   }
 
   network_interface {
-    subnetwork = "${var.subnet}"
+    subnetwork = "${local.subnet}"
 
     access_config {
       # Include this section to give the VM an external ip address
