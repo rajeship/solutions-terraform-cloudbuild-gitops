@@ -41,6 +41,7 @@ module "http_server" {
   network = "${module.vpc.network}"
 }
 */
+
 module "gke" {
   source  = "../../modules/gke"
   project = "${var.project}"
