@@ -48,7 +48,9 @@ module "gke" {
     all = []
 
     default-node-pool = [
-      "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/devstorage.read_only",
+        "https://www.googleapis.com/auth/logging.write",
+        "https://www.googleapis.com/auth/monitoring",
     ]
   }
 
