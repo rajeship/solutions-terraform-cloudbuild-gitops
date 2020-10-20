@@ -21,7 +21,6 @@ provider "google" {
   project = var.project
 }
 
-/*
 module "vpc" {
   source  = "../../modules/vpc"
   project = "${var.project}"
@@ -40,7 +39,7 @@ module "http_server" {
   subnet  = "${module.vpc.subnet}"
   network = "${module.vpc.network}"
 }
-*/
+
 
 module "gke" {
   source  = "../../modules/gke"
